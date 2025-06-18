@@ -1,0 +1,618 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Basic header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: black;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+}
+
+/* Logo */
+.logo {
+    font-size: 1.5rem;
+    color: red;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: "Nanum Gothic", sans-serif;
+}
+
+/* Nav links */
+nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    font-family: "Nanum Gothic", sans-serif;
+    transition: color 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+    color: red;
+}
+
+/* === MOBILE FIX === */
+@media (max-width: 768px) {
+    nav {
+        position: absolute;
+        top: 60px;
+        /* below header */
+        left: 0;
+        background: rgba(0, 0, 0, 0.95);
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        display: none;
+        /* hide by default */
+    }
+
+    nav.show {
+        display: flex;
+        /* show when toggled */
+    }
+
+    .menu-toggle {
+        display: block;
+        color: red;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+}
+
+/* Hide menu toggle in desktop */
+.menu-toggle {
+    display: none;
+}
+
+.mainsection {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6rem 4rem 2rem;
+    min-height: 100vh;
+    background-color: black;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.mainimg {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainimg img {
+    max-width: 100%;
+    height: 500px;
+    border: 3px solid rgb(118, 12, 12);
+    border-radius: 20%;
+    box-shadow: 0 0 20px red;
+}
+
+.writing {
+    flex: 1;
+    color: white;
+}
+
+.writing h1 {
+    font-size: 3rem;
+    font-family: "Nanum Gothic", sans-serif;
+    color: red;
+    margin-bottom: 1rem;
+}
+
+.writing h3 {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+    .mainsection {
+        flex-direction: column;
+        text-align: center;
+        padding: 4rem 2rem;
+    }
+
+    .writing {
+        padding: 1rem 0;
+    }
+}
+
+.yellow {
+    color: yellow;
+    font-family: "Nanum Gothic", sans-serif;
+}
+
+.about {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6rem 4rem;
+    background-color: #200101;
+    color: white;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.description {
+    flex: 1;
+    font-size: 1.1rem;
+    font-family: "Edu NSW ACT Hand Pre", cursive;
+    line-height: 1.8;
+    padding-right: 2rem;
+}
+
+.myimg {
+    flex: 0 0 20%;
+    max-width: 20%;
+    border: 3px solid red;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px red;
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.myimg img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Responsive layout for small screens */
+@media (max-width: 768px) {
+    .about {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .description {
+        padding-right: 0;
+    }
+
+    .myimg {
+        max-width: 60%;
+        margin-top: 1.5rem;
+    }
+}
+
+.projects {
+    padding: 6rem 4rem;
+    background-color: #000000;
+    color: white;
+}
+
+.projects h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: rgb(255, 255, 255);
+    margin-bottom: 3rem;
+}
+
+.gharse {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+    background: #1c0000;
+    padding: 2rem;
+    border: 2px solid red;
+    border-radius: 12px;
+    box-shadow: 0 0 15px red;
+}
+
+.gharse .comp {
+    flex: 1;
+    max-width: 45%;
+}
+
+.gharse .comp img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 2px solid red;
+    box-shadow: 0 0 10px red;
+}
+
+.gharse .description {
+    flex: 1;
+    font-size: 1.1rem;
+    font-family: "Edu SA Hand", cursive;
+    line-height: 1.6;
+}
+
+.gharse .description button {
+    margin-top: 1.5rem;
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border: 2px solid red;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.gharse .description button a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.gharse .description button:hover {
+    background-color: red;
+    color: rgb(255, 255, 255);
+    box-shadow: 0 0 12px red;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .gharse {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .gharse .comp,
+    .gharse .description {
+        max-width: 100%;
+    }
+}
+
+/* SKILLS SECTION - FULL WIDTH */
+.skills {
+    width: 100%;
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+    background-color: #0d0d0d;
+    color: white;
+    box-sizing: border-box;
+}
+
+.heading {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #333;
+    font-weight: bold;
+}
+
+
+.skills h2 {
+    color: red;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Containers */
+.webdev,
+.Python {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    width: 100%;
+}
+
+/* Image Styling */
+.web-img img,
+.Python-img img {
+    width: 100%;
+    max-width: 600px;
+    height: 230px;
+    border-radius: 12px;
+    border: 4px solid red;
+    box-shadow: 0 0 25px rgba(255, 0, 0, 0.3);
+}
+
+/* Text Styling */
+.web-paragraph,
+.Python-paragraph {
+    flex: 1;
+    font-size: 1.1rem;
+    font-family: "Edu SA Hand", cursive;
+    line-height: 1.8;
+    max-width: 700px;
+}
+
+/* Order Logic */
+.webdev .web-img {
+    order: 1;
+}
+
+.webdev .web-paragraph {
+    order: 2;
+}
+
+.Python .Python-img {
+    order: 2;
+}
+
+.Python .Python-paragraph {
+    order: 1;
+}
+
+/* Responsive */
+@media screen and (max-width: 1024px) {
+
+    .webdev,
+    .Python {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .web-paragraph,
+    .Python-paragraph {
+        max-width: 100%;
+    }
+
+    .web-img img,
+    .Python-img img {
+        max-width: 100%;
+    }
+
+    .webdev .web-img,
+    .Python .Python-img {
+        order: 1 !important;
+    }
+
+    .webdev .web-paragraph,
+    .Python .Python-paragraph {
+        order: 2 !important;
+    }
+}
+
+.experience {
+    padding: 6rem 2rem;
+    background-color: #1f0000;
+    color: white;
+    text-align: center;
+}
+
+.experience h2 {
+    font-size: 2.5rem;
+    color: rgb(255, 255, 255);
+    margin-bottom: 3rem;
+}
+
+/* 🔥 Flex container for cards */
+.experience-cards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.exp1,
+.exp2 {
+    background-color: #1a1a1a;
+    border: 2px solid red;
+    border-radius: 12px;
+    box-shadow: 0 0 15px red;
+    padding: 1.5rem;
+    max-width: 300px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.exp1:hover,
+.exp2:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px red;
+}
+
+.exp1img img,
+.exp2img img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 2px solid red;
+    margin-bottom: 1rem;
+}
+
+.exp1desp h3,
+.exp2desp h3 {
+    color: yellow;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.exp1desp p,
+.exp2desp p {
+    font-size: 1rem;
+    color: #f0f0f0;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.exp1 button,
+.exp2 button {
+    padding: 0.5rem 1rem;
+    background-color: white;
+    border: 2px solid red;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.exp1 button a,
+.exp2 button a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.exp1 button:hover,
+.exp2 button:hover {
+    background-color: red;
+    color: white;
+    box-shadow: 0 0 12px red;
+}
+
+.education {
+    padding: 6rem 2rem;
+    background-color: #0f0000;
+    color: white;
+    text-align: center;
+}
+
+.education h2 {
+    font-size: 2.5rem;
+    color: rgb(255, 255, 255);
+    margin-bottom: 3rem;
+}
+
+/* Flex layout for cards */
+.education-cards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.Secondary,
+.HigherSecondary,
+.btech {
+    background-color: #1a1a1a;
+    border: 2px solid red;
+    border-radius: 12px;
+    box-shadow: 0 0 15px red;
+    padding: 1.5rem;
+    max-width: 300px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.Secondary:hover,
+.HigherSecondary:hover,
+.btech:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px red;
+}
+
+.Secondaryimg img,
+.HigherSecondaryimg img,
+.btechimg img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 2px solid red;
+    margin-bottom: 1rem;
+}
+
+.Secondarydesp h3,
+.HigherSecondarydesp h3,
+.btechdesp h3 {
+    color: yellow;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.Secondarydesp p,
+.HigherSecondarydesp p,
+.btechdesp p {
+    font-size: 1rem;
+    color: #f0f0f0;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+/* 🌟 Glowing marks box */
+.marks {
+    background-color: red;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    box-shadow: 0 0 15px red;
+    margin-top: 0.5rem;
+}
+
+.marks h3 {
+    color: white;
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.contact {
+    background-color: #000000;
+    color: white;
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    color: rgb(255, 255, 255);
+    margin-bottom: 2rem;
+}
+
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.contact-info p {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+}
+
+.contact-info i {
+    color: yellow;
+    margin-right: 0.5rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.social-links a {
+    font-size: 2rem;
+    color: white;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-links a:hover {
+    color: red;
+    transform: scale(1.2);
+}
+
+/* Responsive tweaks */
+@media (min-width: 768px) {
+    .contact-container {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .contact-info,
+    .social-links {
+        flex: 1;
+    }
+}
